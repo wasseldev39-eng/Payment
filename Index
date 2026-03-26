@@ -3,27 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>نظام تسجيل الشركاء </title>
+    <title>نظام واصل 2026 - التحصيل</title>
     <style>
-        /* إعدادات الصفحة الأساسية لمنع التمرير وتغطية الشاشة */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
             overflow: hidden;
-            background-color: #ffffff;
-            font-family: sans-serif;
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* حاوية الإطار لضمان التنسيق */
         .container {
             position: relative;
             width: 100%;
             height: 100%;
         }
 
-        /* تنسيق الإطار (Iframe) ليملأ الحاوية */
         iframe {
             position: absolute;
             top: 0;
@@ -31,31 +28,46 @@
             width: 100%;
             height: 100%;
             border: none;
-            /* تحسين استجابة اللمس على الهواتف */
-            touch-action: none; 
         }
 
-        /* رسالة تحميل بسيطة تظهر خلف السكريبت */
-        .loading {
+        .loading-screen {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #6a1b9a;
+            text-align: center;
             z-index: -1;
+        }
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #6a1b9a;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="loading">جاري تحميل نظام التوقيع...</div>
+        <div class="loading-screen">
+            <div class="loader"></div>
+            <p style="color: #6a1b9a; font-weight: bold;">جاري فتح نظام واصل...</p>
+        </div>
         
         <iframe 
-            src="https://script.google.com/macros/s/AKfycbxsePTqclyU4EVnXHAf1-29qv-MJO112CrUnU1a5ChG1XDRKD73ufAOOSVQn5f3TkOT/exec" 
+            src="https://script.google.com/macros/s/AKfycbx9uRBLLtFd3nd0U9SMmaHAnoEYoT8SJ99qBZ36QoDkgb_TgqQlq6JREEhm0ORtlUPT/exec" 
             allowfullscreen="true"
             allow="geolocation; microphone; camera; display-capture"
-            title="Signature System">
+            title="Wassel System">
         </iframe>
     </div>
 
